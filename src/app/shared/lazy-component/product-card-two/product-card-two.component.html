@@ -1,0 +1,52 @@
+  <!---card-->
+  <div class="card" [id]="data?._id" [routerLink]="[data?.routerLink]" routerLinkActive="router-link-active" >
+    <!---card--img-->
+    <div class="card-img">
+        <img [src]="data?.image" alt="">
+    </div>
+    <!---card-body-->
+    <div class="card-body">
+        <div class="brand">
+            <span>Toyota</span>
+        </div>
+        <!---card-title-price-->
+        <div class="card-title-price">
+            <h3>{{data?.title}}</h3>
+            <h4><img src="./assets/images/image/taka.fb378b29.svg" alt="">{{data?.price}} Lacs</h4>
+        </div>
+        <!---category-->
+        <div class="card-category">
+            <ul>
+                <li>Category: <span>New</span></li>
+                <li>Model Year: <span>2021</span></li>
+            </ul>
+        </div>
+    </div> <!---card-body-end-->
+    <!---card-body-bottom-->
+    <div class="card-body-bottom">
+        <!---card-body-bottom-info--->
+        <div class="card-body-bottom-info">
+            <span><i class="fa-solid fa-gas-pump"></i></span>
+            <h3>600</h3>
+        </div> <!---card-body-bottom-info-end--->
+        <!---card-body-bottom-info--->
+        <div class="card-body-bottom-info">
+            <span><i class="fa-solid fa-gas-pump"></i></span>
+            <h3>Octane</h3>
+        </div>   <!---card-body-bottom-info-end--->
+        <!---card-body-bottom-info--->
+        <div class="card-body-bottom-info">
+            <span><i class="fa-solid fa-gas-pump"></i></span>
+            <h3>2021-01-07</h3>
+        </div>   <!---card-body-bottom-info-end--->
+         <!---card-body-bottom-info--->
+        <div class="card-body-bottom-info">
+            <span><i class="fa-solid fa-gas-pump"></i></span>
+            <h3>Automatic</h3>
+        </div> <!---card-body-bottom-info-end--->
+    </div>
+    <!---card-buy-btn-->
+    <div class="card-buy-btn">
+        <button>Buy Now <i class="fa fa-angle-right"></i></button>
+    </div>
+</div><!---card-end-->

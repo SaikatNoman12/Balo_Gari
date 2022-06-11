@@ -1,0 +1,862 @@
+<!---banner-area-->
+<div class="banner-area">
+    <div class="banner-slide-area">
+        <swiper 
+        [navigation]="true"
+        [pagination]="false"
+        [autoplay]="{
+            delay: 3500,
+            disableOnInteraction:true
+          }"
+        [loop]="true"
+        class="mySwiper banner-carousel">
+            <ng-template swiperSlide *ngFor="let data of bannerData" [id]="data?._id">
+                  <!--slide-img-->
+                <div class="slide-img">
+                    <a [routerLink]="[data?.routerLink]" routerLinkActive="router-link-active" >
+                        <img [src]="data?.image" [alt]="data?.image">
+                    </a>
+                </div>
+            </ng-template>
+          </swiper>
+    </div>
+    <!---banner-bottom-->
+    <div class="banner-bottom">
+        <div class="container">
+            <div class="banner-bottom-main">
+                 <!---banner-bottom-top-tab-->
+                 <div class="banner-bottom-top-tab">
+                    <ul>
+                        <li class="user-tab select-tab"><button>Used</button></li>
+                        <li class="re-tab"><button>Recondition</button></li>
+                        <li class="new-tab"><button>New</button></li>
+                    </ul>
+                </div>
+                <!---banner-bottom-brand-tab-->
+                <div class="banner-bottom-brand-tab">
+                    <ul>
+                        <li class="brand-tab">
+                            <div class="brand-tab-info">
+                                <div>
+                                    <span>Select</span>
+                                </div>
+                                <div>
+                                    <h3>Brand <i class="fa fa-angle-right"></i></h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="brand-tab">
+                            <div class="brand-tab-info">
+                                <div>
+                                    <span>Select</span>
+                                </div>
+                                <div>
+                                    <h3>Modal <i class="fa fa-angle-right"></i></h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="brand-tab">
+                            <div class="brand-tab-info">
+                                <div>
+                                    <span>Select</span>
+                                </div>
+                                <div>
+                                    <h3>Price <i class="fa fa-angle-right"></i></h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="brand-tab brand-btn">
+                            <div class="brand-tab-info">
+                                <button>Find Cars <i class="fa fa-search"></i></button>
+                            </div>     
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!---responsive-car-category-->
+<div class="res-car-category">
+    <div class="container">
+        <div class="res-category-main">
+            <!---car-category-info-->
+            <div class="car-category">
+                <a href="#">
+                    <div class="car-category-info">
+                        <img src="./assets/images/image/car1.ec118b09.png" alt="">
+                        <h3>New Car</h3>
+                    </div>
+                </a>
+            </div>
+              <!---car-category-info-->
+              <div class="car-category" style="background-color: rgb(59, 95, 200);">
+                <a href="#">
+                    <div class="car-category-info">
+                        <img src="./assets/images/image/car2.94f623b1.png" alt="">
+                        <h3>Reconditioned Car</h3>
+                    </div>
+                </a>
+            </div>
+              <!---car-category-info--> 
+              <div class="car-category"  style="background-color: rgb(50, 200, 148)">
+                <a href="#">
+                    <div class="car-category-info">
+                        <img src="./assets/images/image/car3.5200c8de.png" alt="">
+                        <h3>Used Car</h3>
+                    </div>
+                </a>
+            </div>
+              <!---car-category-info-->
+              <div class="car-category" style="background-color: rgb(61, 152, 219);">
+                <a href="#">
+                    <div class="car-category-info" >
+                        <img src="./assets/images/image/bike.61f69051.png" alt="">
+                        <h3>Bikes</h3>
+                    </div>
+                </a>
+            </div>
+              <!---car-category-info-->
+              <div class="car-category" style="background-color: rgb(143, 91, 239);">
+                <a href="#">
+                    <div class="car-category-info">
+                        <img src="./assets/images/image/auctionsheet.c9502ff1.png" alt="">
+                        <h3>Verify Auction Sheet</h3>
+                    </div>
+                </a>
+            </div>
+              <!---car-category-info-->
+              <div class="car-category" style="background-color: rgb(166, 108, 93);">
+                <a href="#">
+                    <div class="car-category-info">
+                        <img src="./assets/images/image/car-services.0f25e837.png" alt="">
+                        <h3>Car Services</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!---section1-->
+<div class="section1">
+    <div class="container">
+        <div class="title">
+            <h3>Popular <span>Brands</span></h3>
+        </div>
+        <!---popular-tab-->
+        <div class="popular-tab">
+            <ul>
+                <li><button class="popular-tab-active">Toyota</button></li>
+                <li><button>Honda</button></li>
+                <li><button>Mitsubishi</button></li>
+                <li><button>Nissan</button></li>
+                <li><button>Hyundai</button></li>
+            </ul>
+        </div>
+        <!---popular-main-->
+        <div class="popular-main">
+            <swiper
+                [slidesPerView]="1.3"
+                [spaceBetween]="10"
+                [navigation]="true"
+                [breakpoints]="{
+                '410': {
+                        slidesPerView: 1.5
+                },
+                '510': {
+                        slidesPerView: 2
+                },
+                '610': {
+                        slidesPerView: 2.5
+                },
+                '750': {
+                    slidesPerView: 3
+                },
+                '900': {
+                    slidesPerView: 3.3
+                },
+                '1030': {
+                    slidesPerView: 4
+                }
+                }"
+                class="mySwiper"
+            >
+            <ng-template swiperSlide *ngFor="let data of  popularData">  
+                <app-product-card-one [data]="data"></app-product-card-one>
+            </ng-template>
+        </swiper>
+
+        </div>
+    </div>
+</div>
+<!---section2-->
+<div class="section2">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Why Trust <span>Bhalogari?</span></h3>
+        </div>
+        <!--section2-main-->
+        <div class="section2-main">
+            <!---section2-info-->
+            <div class="section2-info">
+                <!---info-left-->
+                <div class="section2-info-left">
+                    <h3>46+</h3>
+                </div>
+                <!---section2-info-right-->
+                <div class="section2-info-right">
+                    <p>Premier</p>
+                    <p>Brands</p>
+                </div>
+            </div><!---section2-info-end-->
+            <!---section2-info-->
+            <div class="section2-info">
+                <!---info-left-->
+                <div class="section2-info-left">
+                    <h3>100K+</h3>
+                </div>
+                <!---section2-info-right-->
+                <div class="section2-info-right">
+                    <p>Perfect</p>
+                    <p>Cars</p>
+                </div>
+            </div><!---section2-info-end-->
+            <!---section2-info-->
+            <div class="section2-info">
+                <!---info-left-->
+                <div class="section2-info-left">
+                    <h3>140K+</h3>
+                </div>
+                <!---section2-info-right-->
+                <div class="section2-info-right">
+                    <p>Happy</p>
+                    <p>Users</p>
+                </div>
+            </div><!---section2-info-end-->
+            <!---section2-info-->
+            <div class="section2-info">
+                <!---info-left-->
+                <div class="section2-info-left">
+                    <h3>8K+</h3>
+                </div>
+                <!---section2-info-right-->
+                <div class="section2-info-right">
+                    <p>Total</p>
+                    <p>Registrations</p>
+                </div>
+            </div><!---section2-info-end-->
+
+        </div>
+    </div>
+</div>
+<!----section3-->
+<div class="section3">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+           <div>
+             <h3>Choose by <span>Maker</span></h3>
+           </div>
+           <div>
+               <a href="#">View All</a>
+           </div>
+        </div>
+        <!---section3-main-->
+        <div class="section3-main">
+            <!--category-->
+            <div class="category-info" *ngFor="let data of makerData" [id]="data?._id">
+                <a [routerLink]="[data?.routerLink]" >
+                    <!---category-img-->
+                <div class="category-img">
+                    <img [src]="data?.image" [alt]="data?.name">
+                </div>
+                <!---category-name-->
+                <div class="category-name">
+                    <h3>{{data?.name}}</h3>
+                </div>
+                </a>
+            </div><!--category-end-->
+        </div><!--section3-main-end-->
+        <!---section3-slide-area-->
+        <div class="section3-slide">
+            <swiper
+                [slidesPerView]="2.5"
+                [spaceBetween]="10"
+                [navigation]="true"
+                [breakpoints]="{
+                '400': {
+                        slidesPerView: 3
+                },
+                '450': {
+                        slidesPerView: 3.5
+                },
+                '550': {
+                        slidesPerView: 4
+                },
+                '640': {
+                        slidesPerView: 4.5
+                },
+                '750': {
+                    slidesPerView: 5
+                }
+                }"
+            class="mySwiper"
+        >
+        <ng-template swiperSlide *ngFor="let data of makerData">  
+            <!--category-->
+            <div class="category-info"  [id]="data?._id">
+                <a [routerLink]="[data?.routerLink]" >
+                    <!---category-img-->
+                <div class="category-img">
+                    <img [src]="data?.image" [alt]="data?.name">
+                </div>
+                <!---category-name-->
+                <div class="category-name">
+                    <h3>{{data?.name}}</h3>
+                </div>
+                </a>
+            </div><!--category-end-->
+        </ng-template>
+    </swiper>
+        </div><!---section3-slide-area-end-->
+        
+    </div>
+</div>
+
+<!---section4-->
+<div class="section4">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Choose by <span>Body Type</span></h3>
+        </div>
+        <!--section4-main-->
+        <div class="section4-main">
+
+             <swiper
+                    [slidesPerView]="2"
+                    [spaceBetween]="10"
+                    [navigation]="true"
+                    [breakpoints]="{
+                    '400': {
+                            slidesPerView: 2.5
+                    },
+                    '440': {
+                            slidesPerView: 3
+                    },
+                    '480': {
+                            slidesPerView: 3.5
+                    },
+                    '580': {
+                            slidesPerView: 4
+                    },
+                    '650': {
+                            slidesPerView: 4.5
+                    },
+                    '760': {
+                        slidesPerView: 5
+                    },
+                    '950': {
+                        slidesPerView: 6
+                    },
+                    '1050': {
+                        slidesPerView: 7
+                    }
+                    }"
+                class="mySwiper"
+            >
+            <ng-template swiperSlide *ngFor="let data of bodyData">  
+                <!---body-info-->
+                <div class="body-info" [id]="data?._id">
+                    <div class="body-info-img">
+                        <img [src]="data?.image" [alt]="data?.name">
+                    </div>
+                    <!---body-name-->
+                    <div class="body-name">
+                        <h3>{{data?.name}}</h3>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+        </div>
+    </div>
+</div>
+<!---section5-->
+<div class="section5">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Search by <span>Specifications</span></h3>
+        </div>
+        <!---section5-main-->
+        <div class="section5-main">
+            <!---specification-info-->
+            <div class="specification-info">
+                <!--specification-title-->
+                <div class="specification-title">
+                    <span>Search by</span>
+                    <h3>Price</h3>
+                </div>
+                <!---specification-data-->
+                <div class="specification-data">
+                    <ul>
+                        <li><mat-checkbox>1 - 10 Lacs</mat-checkbox></li>
+                        <li><mat-checkbox>10 - 20 Lacs</mat-checkbox></li>
+                        <li><mat-checkbox>20 - 30 Lacs</mat-checkbox></li>
+                        <li><mat-checkbox>30 - 40 Lacs</mat-checkbox></li>
+                        <li><mat-checkbox>40 - 50 Lacs</mat-checkbox></li>
+                        <li><mat-checkbox>50 Lacs or above</mat-checkbox></li>
+                    </ul>
+                </div>
+            </div> <!---specification-info-end-->
+
+               <!---specification-info-->
+               <div class="specification-info">
+                <!--specification-title-->
+                <div class="specification-title">
+                    <span>Search by</span>
+                    <h3>Mileage</h3>
+                </div>
+                <!---specification-data-->
+                <div class="specification-data">
+                    <ul>
+                        <li><mat-checkbox>10,000 km or below</mat-checkbox></li>
+                        <li><mat-checkbox>10,000 to 30,000 km</mat-checkbox></li>
+                        <li><mat-checkbox>30,000 to 50,000 km</mat-checkbox></li>
+                        <li><mat-checkbox>50,000 to 1,00,000 km</mat-checkbox></li>
+                        <li><mat-checkbox>1,00,000 to 1,50,000 km</mat-checkbox></li>
+                        <li><mat-checkbox>Over 1,50,000 km</mat-checkbox></li>
+                    </ul>
+                </div>
+            </div> <!---specification-info-end-->
+
+               <!---specification-info-->
+               <div class="specification-info">
+                <!--specification-title-->
+                <div class="specification-title">
+                    <span>Search by</span>
+                    <h3>Seating Capacity</h3>
+                </div>
+                <!---specification-data-->
+                <div class="specification-data">
+                    <ul>
+                        <li><mat-checkbox>2 Seats</mat-checkbox></li>
+                        <li><mat-checkbox>4 Seats</mat-checkbox></li>
+                        <li><mat-checkbox>5 Seats</mat-checkbox></li>
+                        <li><mat-checkbox>7 Seats</mat-checkbox></li>
+                        <li><mat-checkbox>8 Seats</mat-checkbox></li>
+                        <li><mat-checkbox>10 Seats or above</mat-checkbox></li>
+                    </ul>
+                </div>
+            </div> <!---specification-info-end-->
+
+               <!---specification-info-->
+               <div class="specification-info">
+                <!--specification-title-->
+                <div class="specification-title">
+                    <span>Search by</span>
+                    <h3>Engine Capacity</h3>
+                </div>
+                <!---specification-data-->
+                <div class="specification-data">
+                    <ul>
+                        <li><mat-checkbox>800 cc or less</mat-checkbox></li>
+                        <li><mat-checkbox>1,000 to 1,499 cc</mat-checkbox></li>
+                        <li><mat-checkbox>1,500 to 1,999 cc</mat-checkbox></li>
+                        <li><mat-checkbox>2,000 to 2,499 cc</mat-checkbox></li>
+                        <li><mat-checkbox>2,500 to 2,999 cc</mat-checkbox></li>
+                        <li><mat-checkbox>3,000 cc or above</mat-checkbox></li>
+                    </ul>
+                </div>
+                <!---btn-->
+                <div class="spec-btn">
+                    <button>Search <i class="fa fa-search"></i></button>
+                </div>
+            </div> <!---specification-info-end-->
+
+        </div>
+
+    </div>
+</div>
+
+<!---section6-->
+<div class="section6">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Featured <span>New Car</span></h3>
+        </div> <!---title-->
+        <!---section-main-->
+        <div class="section6-main">
+            <swiper
+                [slidesPerView]="1.3"
+                [spaceBetween]="10"
+                [navigation]="true"
+                [breakpoints]="{
+                '410': {
+                        slidesPerView: 1.5
+                },
+                '510': {
+                        slidesPerView: 2
+                },
+                '610': {
+                        slidesPerView: 2.5
+                },
+                '750': {
+                    slidesPerView: 3
+                },
+                '900': {
+                    slidesPerView: 3.3
+                },
+                '1030': {
+                    slidesPerView: 4
+                }
+                }"
+                class="mySwiper"
+            >
+            <ng-template swiperSlide *ngFor="let data of popularData">  
+                <app-product-card-two [data]="data"></app-product-card-two>
+            </ng-template>
+        </swiper>
+        
+        </div>
+    </div>
+</div>
+
+<!---section6-->
+<div class="section6">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Featured <span>Reconditioned Car</span></h3>
+        </div> <!---title-->
+        <!---section-main-->
+        <div class="section6-main">
+            <swiper
+                [slidesPerView]="1.3"
+                [spaceBetween]="10"
+                [navigation]="true"
+                [breakpoints]="{
+                '410': {
+                        slidesPerView: 1.5
+                },
+                '510': {
+                        slidesPerView: 2
+                },
+                '610': {
+                        slidesPerView: 2.5
+                },
+                '750': {
+                    slidesPerView: 3
+                },
+                '900': {
+                    slidesPerView: 3.3
+                },
+                '1030': {
+                    slidesPerView: 4
+                }
+                }"
+                class="mySwiper"
+            >
+            <ng-template swiperSlide *ngFor="let data of popularData">  
+                <app-product-card-two [data]="data"></app-product-card-two>
+            </ng-template>
+        </swiper>
+        
+        </div>
+    </div>
+</div>
+
+<!---section6-->
+<div class="section6">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Featured <span>Used Car</span></h3>
+        </div> <!---title-->
+        <!---section-main-->
+        <div class="section6-main">
+            <swiper
+                [slidesPerView]="1.3"
+                [spaceBetween]="10"
+                [navigation]="true"
+                [breakpoints]="{
+                '410': {
+                        slidesPerView: 1.5
+                },
+                '510': {
+                        slidesPerView: 2
+                },
+                '610': {
+                        slidesPerView: 2.5
+                },
+                '750': {
+                    slidesPerView: 3
+                },
+                '900': {
+                    slidesPerView: 3.3
+                },
+                '1030': {
+                    slidesPerView: 4
+                }
+                }"
+                class="mySwiper"
+            >
+            <ng-template swiperSlide *ngFor="let data of popularData">  
+                <app-product-card-two [data]="data"></app-product-card-two>
+            </ng-template>
+        </swiper>
+        </div>
+    </div>
+</div>
+<!----section7-->
+<div class="section7">
+    <div class="container">
+
+    </div>
+</div><!----section7-end-->
+
+
+<!----section8-->
+<div class="section8">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Our Customer <span>Feedback</span></h3>
+        </div><!---title-end-->
+        <!---section8-main-->
+        <div class="section8-main">
+
+            <swiper
+                [slidesPerView]="1"
+                [spaceBetween]="5"
+                [navigation]="true"
+                [breakpoints]="{
+                '510': {
+                        slidesPerView: 1.3
+                },
+                '750': {
+                    slidesPerView: 1.5
+                },
+                '900': {
+                    slidesPerView: 2
+                }
+                }"
+                class="mySwiper coutomer-slide"
+            >
+            <ng-template swiperSlide *ngFor="let data of [1,2,3]"> 
+                   <!--coustomer-card-->
+                <div class="coustomer-card">
+                    <!---coustomer-img-->
+                    <div class="coustomer-img">
+                        <img src="./assets/images/image/48825f17-7ef8-4d1c-b2f6-0e28f47e508b.jpg" alt="">
+                    </div>
+                    <!--coustomer-description-->
+                    <div class="coustomer-description">
+                        <p>Recently I bought Toyota Prius Alpha from Bhalogari Com. Before delivery they checked every small thing of the car very carefully with Japanese Technician and then deliver the car with the inspection report. They also offered me free service for a full year an… <span>Read More<i class="fa fa-caret-down"></i></span></p>
+                    </div>
+                    <!---coustomer-name-area-->
+                    <div class="coutomer-name">
+                        <h3>Nabil Sadman</h3>
+                        <h4>Individual User</h4>
+                    </div>
+                </div> 
+            </ng-template>
+        </swiper>
+
+        </div>    <!---section8-main-end-->
+
+    </div>
+</div>
+<!---section9-->
+<div class="section9">
+    <div class="container">
+        <!---section9-main-->
+        <div class="section9-main">
+            <!---section9-left-->
+            <div class="section9-left">
+                <!--section9-left-title-->
+                <div class="section9-left-title">
+                    <h3>Watch videos from the number one car review channel in Bangladesh</h3>
+                </div>
+                <!---check-->
+                <div class="section9-check">
+                    <ul>
+                        <li><i class="fa fa-check"></i>Expert Previews</li>
+                        <li><i class="fa fa-check"></i>Real User Reviews</li>
+                        <li><i class="fa fa-check"></i>Latest Offers & Updates</li>
+                    </ul>
+                </div>
+            </div>
+            <!---section9-right-->
+            <div class="section9-right">
+                <div class="section9-img">
+                    <div class="big-img">
+                        <img src="./assets/images/image/toyota1.jpg" alt="">
+                    </div>
+                    <div class="play-img">
+                        <img src="./assets/images/image/youtube.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!---section10-->
+<div class="section10">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>How to buy your <span> car</span> with <span>Bhalogari?</span> </h3>
+        </div>
+        <!---section10-main-->
+        <div class="section10-main">
+            <!--step-area-->
+            <div class="step">
+                <!---step-top-->
+                <div class="step-top">
+                    <img src="./assets/images/image/Step1.png" alt="">
+                </div>
+                <!--step-info-->
+                <div class="step-info">
+                    <!--step-img-->
+                    <div class="step-img">
+                        <img src="./assets/images/image/Step1Logo.png" alt="">
+                    </div>
+                    <!---step-text--->
+                    <div class="step-text">
+                        <h3>Choose Your Car</h3>
+                        <p>We have compiled recommended information that you want to know to buy your car.</p>
+                    </div>
+                </div>
+            </div><!--step-area-end-->
+            <!--step-area-->
+            <div class="step">
+                <!---step-top-->
+                <div class="step-top">
+                    <img src="./assets/images/image/Step2.png" alt="">
+                </div>
+                <!--step-info-->
+                <div class="step-info">
+                    <!--step-img-->
+                    <div class="step-img">
+                        <img src="./assets/images/image/Step2Logo.png" alt="">
+                    </div>
+                    <!---step-text--->
+                    <div class="step-text">
+                        <h3>Contact Seller</h3>
+                        <p>After you've selected a car, we arrange a viewing to seller location or one of our points.</p>
+                    </div>
+                </div>
+            </div><!--step-area-end-->
+
+            <!--step-area-->
+            <div class="step">
+                <!---step-top-->
+                <div class="step-top">
+                    <img src="./assets/images/image/Step3.png" alt="">
+                </div>
+                <!--step-info-->
+                <div class="step-info">
+                    <!--step-img-->
+                    <div class="step-img">
+                        <img src="./assets/images/image/Step3Logo.png" alt="">
+                    </div>
+                    <!---step-text--->
+                    <div class="step-text">
+                        <h3>Financing & Registration</h3>
+                        <p>We deal with the paper work to avail your financing and registration in 24 hours</p>
+                    </div>
+                </div>
+            </div><!--step-area-end-->
+
+            <!--step-area-->
+            <div class="step">
+                <!---step-top-->
+                <div class="step-top">
+                    <img src="./assets/images/image/Step4.png" alt="">
+                </div>
+                <!--step-info-->
+                <div class="step-info">
+                    <!--step-img-->
+                    <div class="step-img">
+                        <img src="./assets/images/image/Step4Logo.png" alt="">
+                    </div>
+                    <!---step-text--->
+                    <div class="step-text">
+                        <h3>Get Your Car</h3>
+                        <p>Embrace the joy of Car Ownership without any of the hassle!</p>
+                    </div>
+                </div>
+            </div><!--step-area-end-->
+
+        </div>
+    </div>
+</div>
+
+
+<!---section11-->
+<div class="section11">
+    <div class="container">
+        <!---title-->
+        <div class="title">
+            <h3>Featured <span> Articles</span></h3>
+        </div>
+        <!---section11-main-->
+        <div class="section11-main">
+                <swiper
+                        [slidesPerView]="1"
+                        [spaceBetween]="16"
+                        [navigation]="true"
+                        [breakpoints]="{
+                        '400': {
+                                slidesPerView: 1
+                        },
+
+                        '450': {
+                                slidesPerView: 1.5
+                        },
+                        '650': {
+                            slidesPerView: 2
+                        },
+                        '830': {
+                            slidesPerView: 2.5
+                        },
+                        '1030': {
+                            slidesPerView: 3
+                        }
+                        }"
+                    class="mySwiper"
+                >
+                <ng-template swiperSlide *ngFor="let data of articleData">
+                        <!--articles-->
+                        <div class="articles" [id]="data?._id">
+                            <!---articles-img-->
+                            <div class="articles-img">
+                                <img [src]="data?.image" [alt]="data?.title">
+                                <!--articles-tag-->
+                                <div class="articles-tag">
+                                    <span>{{data?.tag}}</span>
+                                </div>
+                            </div>
+                            <!--artilces-body-->
+                            <div class="articles-body">
+                                <h3>{{data?.title}}</h3>
+                                <p>{{data?.description}}</p>
+                                <div style="text-align: right;">
+                                    <a [routerLink]="[data?.routerLink]" routerLinkActive="router-link-active" >Read More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+
+                        </div><!--articles-end-->  
+                </ng-template>
+            </swiper>
+
+        </div>
+    </div>
+</div>

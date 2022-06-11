@@ -1,0 +1,1011 @@
+<section class="section">
+
+    <!-- pagination design start -->
+    <div class="section-one-child">
+        <div class="pagination">
+            <span class="privious_page"><a href="#">Home</a></span>
+            <span class="icon">
+                <i class="fas fa-angle-right"></i>
+            </span>
+            <span class="privious_page"><a href="#">New car</a></span>
+            <span class="icon">
+                <i class="fas fa-angle-right"></i>
+            </span>
+            <span class="privious_page"><a href="#">Compare car</a></span>
+            <span class="icon">
+                <i class="fas fa-angle-right"></i>
+            </span>
+            <span class="current_page">Maruti Alto 800 vs Honda City Hybrid</span>
+        </div>
+    </div>
+    <!-- pagination design end -->
+
+    <!-- compare card design start -->
+    <div class="difference">
+        <div class="section-one-child">
+            <div class="compare-cards">
+                <h1>Maruti Alto 800 vs Honda City Hybrid Comparison</h1>
+                <div class="card-item">
+                    <div class="cards">
+
+                        <!-- card one -->
+                        <div class="card">
+                            <div class="card-imge">
+                                <div class="adding-image" *ngIf="!cars[0]">
+                                    <div class="plus">
+                                        <i class="las la-plus"></i>
+                                    </div>
+                                    <h5>add card</h5>
+                                </div>
+                                <div class="image" *ngIf="cars[0]">
+                                    <img src="{{cars[0].image}}" alt="">
+                                </div>
+                            </div>
+                            <div class="select-cars">
+                                <div class="select-car" *ngIf="!cars[0]">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Brand/Model</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Maruti Alto 800</mat-option>
+                                            <mat-option value="two">Maruti Alto 800 tour</mat-option>
+                                            <mat-option value="three">Maruti Baleno</mat-option>
+                                            <mat-option value="four">Maruti Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Variant</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">STD opt(petrol) 3.69 Lakh*</mat-option>
+                                            <mat-option value="two">LXI opt(petrol) 4.08 Lakh*</mat-option>
+                                            <mat-option value="three">VXI opt(petrol) 4.28 Lakh*</mat-option>
+                                            <mat-option value="four">Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="selected-cars" *ngIf="cars[0]">
+                                    <h3>
+                                        {{cars[0].modelName}}
+                                        <span>
+                                            <a href="#">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                        </span>
+                                    </h3>
+
+                                    <div class="selected">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Select Brand/Model</mat-label>
+                                            <mat-select>
+                                                <mat-option [value]="cars[0].variantName">{{cars[0].variantName}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <h2>
+                                        Rs{{cars[0].price_orp}}*
+                                    </h2>
+                                    <p>
+                                        *Ex-showroom Price
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- card one -->
+                        <div class="card">
+                            <div class="card-imge">
+                                <div class="adding-image" *ngIf="!cars[1]">
+                                    <div class="plus">
+                                        <i class="las la-plus"></i>
+                                    </div>
+                                    <h5>add card</h5>
+                                </div>
+                                <div class="image" *ngIf="cars[1]">
+                                    <img src="{{cars[1].image}}" alt="">
+                                </div>
+                            </div>
+                            <div class="select-cars">
+                                <div class="select-car" *ngIf="!cars[1]">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Brand/Model</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Maruti Alto 800</mat-option>
+                                            <mat-option value="two">Maruti Alto 800 tour</mat-option>
+                                            <mat-option value="three">Maruti Baleno</mat-option>
+                                            <mat-option value="four">Maruti Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Variant</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">STD opt(petrol) 3.69 Lakh*</mat-option>
+                                            <mat-option value="two">LXI opt(petrol) 4.08 Lakh*</mat-option>
+                                            <mat-option value="three">VXI opt(petrol) 4.28 Lakh*</mat-option>
+                                            <mat-option value="four">Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="selected-cars" *ngIf="cars[1]">
+                                    <h3>
+                                        {{cars[1].modelName}}
+                                        <span>
+                                            <a href="#">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                        </span>
+                                    </h3>
+
+                                    <div class="selected">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Select Brand/Model</mat-label>
+                                            <mat-select>
+                                                <mat-option [value]="cars[1].variantName">{{cars[1].variantName}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <h2>
+                                        Rs{{cars[1].price_orp}}*
+                                    </h2>
+                                    <p>
+                                        *Ex-showroom Price
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- card one -->
+                        <div class="card">
+                            <div class="card-imge">
+                                <div class="adding-image" *ngIf="!cars[2]">
+                                    <div class="plus">
+                                        <i class="las la-plus"></i>
+                                    </div>
+                                    <h5>add card</h5>
+                                </div>
+                                <div class="image" *ngIf="cars[2]">
+                                    <img src="{{cars[2].image}}" alt="">
+                                </div>
+                            </div>
+                            <div class="select-cars">
+                                <div class="select-car" *ngIf="!cars[2]">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Brand/Model</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Maruti Alto 800</mat-option>
+                                            <mat-option value="two">Maruti Alto 800 tour</mat-option>
+                                            <mat-option value="three">Maruti Baleno</mat-option>
+                                            <mat-option value="four">Maruti Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Variant</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">STD opt(petrol) 3.69 Lakh*</mat-option>
+                                            <mat-option value="two">LXI opt(petrol) 4.08 Lakh*</mat-option>
+                                            <mat-option value="three">VXI opt(petrol) 4.28 Lakh*</mat-option>
+                                            <mat-option value="four">Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="selected-cars" *ngIf="cars[2]">
+                                    <h3>
+                                        {{cars[2].modelName}}
+                                        <span>
+                                            <a href="#">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                        </span>
+                                    </h3>
+
+                                    <div class="selected">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Select Brand/Model</mat-label>
+                                            <mat-select>
+                                                <mat-option [value]="cars[2].variantName">{{cars[2].variantName}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <h2>
+                                        Rs{{cars[2].price_orp}}*
+                                    </h2>
+                                    <p>
+                                        *Ex-showroom Price
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- card four -->
+                        <div class="card">
+                            <div class="card-imge">
+                                <div class="adding-image" *ngIf="!cars[3]">
+                                    <div class="plus">
+                                        <i class="las la-plus"></i>
+                                    </div>
+                                    <h5>add card</h5>
+                                </div>
+                                <div class="image" *ngIf="cars[3]">
+                                    <img src="{{cars[3].image}}" alt="">
+                                </div>
+                            </div>
+                            <div class="select-cars">
+                                <div class="select-car" *ngIf="!cars[3]">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Brand/Model</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Maruti Alto 800</mat-option>
+                                            <mat-option value="two">Maruti Alto 800 tour</mat-option>
+                                            <mat-option value="three">Maruti Baleno</mat-option>
+                                            <mat-option value="four">Maruti Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Variant</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">STD opt(petrol) 3.69 Lakh*</mat-option>
+                                            <mat-option value="two">LXI opt(petrol) 4.08 Lakh*</mat-option>
+                                            <mat-option value="three">VXI opt(petrol) 4.28 Lakh*</mat-option>
+                                            <mat-option value="four">Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="selected-cars" *ngIf="cars[3]">
+                                    <h3>
+                                        {{cars[3].modelName}}
+                                        <span>
+                                            <a href="#">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                        </span>
+                                    </h3>
+
+                                    <div class="selected">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Select Brand/Model</mat-label>
+                                            <mat-select>
+                                                <mat-option [value]="cars[3].variantName">{{cars[3].variantName}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <h2>
+                                        Rs{{cars[3].price_orp}}*
+                                    </h2>
+                                    <p>
+                                        *Ex-showroom Price
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- compare card design end -->
+
+
+    <!-- hide common feature start -->
+    <div class=" common-hide-feature">
+        <div class="section-one-child">
+            <div class="hide-feature">
+                <mat-checkbox class="example-margin">Hide Common Features</mat-checkbox>
+            </div>
+        </div>
+    </div>
+    <!-- hide common feature end -->
+
+    <!-- compare-details start -->
+    <div class="section-one-child">
+        <div class="compare-details">
+            <div class="compare-info">
+                <h1>Maruti Alto 800 vs Honda City Hybrid</h1>
+                <p>
+                    Should you buy Maruti Alto 800 or Honda City Hybrid? Find out which car is best for you - compare
+                    the two models on the basis of their Price, Size, Space, Boot Space, Service cost, Mileage,
+                    Features, Colours and other specs. Maruti Alto 800 price starts at Rs 3.39 Lakh ex-showroom for STD
+                    Opt (Petrol) and Honda City Hybrid price starts Rs 19.50 Lakh ex-showroom for ZX Sensing eHEV
+                    (Petrol). Alto 800 has 796 cc (CNG top model) engine, while City Hybrid has 1498 cc (Petrol top
+                    model) engine. As far as mileage is concerned, the
+
+                    <span><a href="#">Read More...</a></span>
+                </p>
+            </div>
+
+            <!-- compare details table one -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="car-detail">
+                                <i class="fab fa-delicious"></i>
+                                Basic Information
+                            </th>
+
+                            <th *ngFor="let car of cars">
+                                {{car.variantName}}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="car-detail">Brand name</td>
+                            <ng-container *ngFor="let car of cars">
+                                <td><a title="Maruti" href="#">{{car.modelBrandName}}</a></td>
+                            </ng-container>
+                            <!-- <td><a title="Honda" href="#">Honda</a></td> -->
+                        </tr>
+                        <tr>
+                            <td class="car-detail">On Road Price </td>
+                            <ng-container *ngFor="let car of cars">
+                                <td><i class="las la-rupee-sign"></i> {{car.onRoadPrice}}*</td>
+                            </ng-container>
+                            <!-- <td><i class="las la-rupee-sign"></i>22,35,372<sup>#</sup></td> -->
+                        </tr>
+                        <tr>
+                            <td class="car-detail">Offers & Discount</td>
+                            <td *ngFor="let car of cars">
+                                {{car.offers ? car.offers : '-'}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="car-detail">User Rating</td>
+                            <td *ngFor="let car of cars">
+                                <div class="car-rating">
+                                    <span>{{car.rating}} </span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="base-review">Based on <a title="Alto 800 Reviews" href="#"> 427
+                                        Reviews</a></span>
+                            </td>
+                            <!-- <td>
+                                <div class="car-rating">
+                                    <span>4.8 </span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="base-review">Based on <a title="City hybrid Reviews" href="#"> 19
+                                        Reviews</a></span>
+                            </td> -->
+                        </tr>
+                        <tr>
+                            <td class="car-detail">Finance Available (EMI)</td>
+                            <td *ngFor="let car of cars">
+                                <span *ngIf="car.finance">
+                                    <i class="las la-rupee-sign"></i> {{car.finance}}
+                                    <a class="click" href="#">Click Now</a>
+                                </span>
+                                <span *ngIf="!car.finance">
+                                    -
+                                </span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="car-detail">Insurance</td>
+                            <td *ngFor="let car of cars">
+                                <span *ngIf="car.insurance && car.insuranceDetails">
+                                    <i class="las la-rupee-sign"></i> {{car.insurance}}
+                                    <a class="click" href="#">{{car.insuranceDetails}}</a>
+                                </span>
+                                <span *ngIf="!car.insurance || !car.insuranceDetails">
+                                    -
+                                </span>
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td class="car-detail">Service Cost (Avg. of 5 years)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.serviceCost ? car.serviceCost : '-'}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- compare details table two -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name block-dipsly">
+                                <i class="fas fa-tractor"></i>
+                                Engine and Transmission
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine block-dipsly">Engine Type</td>
+                            <td *ngFor="let car of cars">
+                                {{car.engine ? car.engine : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine block-dipsly">Displacement (cc)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.city_mileage ? car.city_mileage : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine block-dipsly">No Of Cylinder</td>
+                            <td *ngFor="let car of cars">
+                                {{car.selinder ? car.selinder : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine block-dipsly">Motor Type</td>
+                            <td *ngFor="let car of cars">
+                                {{car.selinder ? car.selinder : '-'}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- compare details table three -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-gas-pump"></i>
+                                Fuel & Performance
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">Fuel Type</td>
+                            <td *ngFor="let car of cars">
+                                {{car.fueltype ? car.fueltype : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Displacement (cc)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.dePlaceMentCC ? car.dePlaceMentCC : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Mileage (City)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.city_mileage? car.city_mileage : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Mileage (ARAI)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.MileageARAI ? car.MileageARAI : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Fuel Tank Capacity</td>
+                            <td *ngFor="let car of cars">
+                                {{car.FuelTankCapacity ? car.FuelTankCapacity : '-'}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- car grid div start -->
+            <div class="new-comparison-cards">
+                <h1>
+                    Add another car to comparison
+                </h1>
+                <div class="new-cards">
+                    <!-- new card one -->
+                    <div class="new-compare-card">
+                        <div class="new-card-detial">
+                            <img src="../../../assets/image/car/car1.jpg" alt="">
+                            <div class="new-card-info">
+                                <h5>Bajaj Qute (RE60)</h5>
+                                <p>
+                                    <i class="las la-rupee-sign"></i>
+                                    2.64 Lakh *
+                                </p>
+                            </div>
+                        </div>
+                        <div class="new-card-add-btn">
+                            <a href="#">Add To Cart</a>
+                        </div>
+                    </div>
+                    <!-- new card two -->
+                    <div class="new-compare-card">
+                        <div class="new-card-detial">
+                            <img src="../../../assets/image/car/car2.jpg" alt="">
+                            <div class="new-card-info">
+                                <h5>Volkswagen Taigun</h5>
+                                <p>
+                                    <i class="las la-rupee-sign"></i>
+                                    11.40 - 18.60 Lakh *
+                                </p>
+                            </div>
+                        </div>
+                        <div class="new-card-add-btn">
+                            <a href="#">Add To Cart</a>
+                        </div>
+                    </div>
+                    <!-- new card three -->
+                    <div class="new-compare-card">
+                        <div class="new-card-detial">
+                            <img src="../../../assets/image/car/car3.jpg" alt="">
+                            <div class="new-card-info">
+                                <h5>Maruti Eeco</h5>
+                                <p>
+                                    <i class="las la-rupee-sign"></i>
+                                    4.63 - 5.94 Lakh *
+                                </p>
+                            </div>
+                        </div>
+                        <div class="new-card-add-btn">
+                            <a href="#">Add To Cart</a>
+                        </div>
+                    </div>
+                    <!-- new card four -->
+                    <div class="new-compare-card">
+                        <div class="new-card-detial">
+                            <img src="../../../assets/image/car/car4.jpg" alt="">
+                            <div class="new-card-info">
+                                <h5>Ahindra Scorpio</h5>
+                                <p>
+                                    <i class="las la-rupee-sign"></i>
+                                    13.54 - 18.62 Lakh *
+                                </p>
+                            </div>
+                        </div>
+                        <div class="new-card-add-btn">
+                            <a href="#">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- car grid div end -->
+
+            <!-- compare details table four -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-cogs"></i>
+                                Suspension, Steering & Brakes
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">Front Suspension</td>
+                            <td *ngFor="let car of cars">
+                                {{car.FrontSuspension ? car.FrontSuspension : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Rear Suspension</td>
+                            <td *ngFor="let car of cars">
+                                {{car.RearSuspension ? car.RearSuspension : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Shock Absorbers Type</td>
+                            <td *ngFor="let car of cars">
+                                {{car.ShockAbsorbers ? car.ShockAbsorbers : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Steering Type</td>
+                            <td *ngFor="let car of cars">
+                                {{car.SteeringType ? car.SteeringType : 'Electric'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Steering Column</td>
+                            <td *ngFor="let car of cars">
+                                {{car.SteeringColumn ? car.SteeringColumn : 'Collapse'}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- compare details table five -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-cubes"></i>
+                                Dimensions & Capacity
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">Length (mm)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Length ? car.Length : '6'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Width (mm)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Width ? car.Width : '5'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Height (mm)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Height ? car.Height : '5'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Wheel Base (mm)</td>
+                            <td *ngFor="let car of cars">
+                                {{car.WheelBase ? car.WheelBase : '5'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">No. of Doors</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Doors ? car.Doors : '4'}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- compare details table six -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-wheelchair"></i>
+                                Comfort & Convenience
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">Power Steering</td>
+                            <td *ngFor="let car of cars">
+                                {{car.PowerSteering ? car.PowerWindowsFront : '-'}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Power Windows Front </td>
+                            <td *ngFor="let car of cars">
+                                {{car.PowerWindowsFront ? car.PowerWindowsFront : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Power Windows Rear</td>
+                            <td *ngFor="let car of cars">
+                                {{car.PowerWindowsRear ? car.PowerWindowsRear : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Power Boot</td>
+                            <td *ngFor="let car of cars">
+                                {{car.PowerBoot ? car.PowerBoot : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Remote Engine Start/Stop</td>
+                            <td *ngFor="let car of cars">
+                                {{car.RemoteEngine ? car.RemoteEngine : "-"}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- compare details table seven -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-circle-notch"></i>
+                                Interior
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">Tachometer</td>
+                            <td *ngFor="let car of cars">
+                                {{car.RemoteEngine ? car.RemoteEngine : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Electronic Multi Tripmeter</td>
+                            <td *ngFor="let car of cars">
+                                {{car.ElectronicMultiTripmeter ? car.ElectronicMultiTripmeter : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Leather Seats</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Leather ? car.Leather : "-"}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- compare details table eight -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-car"></i>
+                                Exterior
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">Available Colors</td>
+                            <td *ngFor="let car of cars">
+                                <span *ngIf="car.Colors">
+                                    <div class="color-2">
+                                        <span class="six"><i class="fas fa-circle"></i></span>
+                                        <span class="seven"><i class="fas fa-circle"></i></span>
+                                        <span class="eight"><i class="fas fa-circle"></i></span>
+                                        <span class="nine"><i class="fas fa-circle"></i></span>
+                                        <span class="ten"><i class="fas fa-circle"></i></span>
+                                        <span class="eleventh"><i class="fas fa-circle"></i></span>
+                                    </div>
+                                    <span>
+                                        <a title="Alto 800 Colors" href="#">{{car.Colors}}</a>
+                                    </span>
+                                    <span *ngIf="!car.Colors">
+                                        -
+                                    </span>
+                                </span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="engine">Body Type</td>
+
+                            <td *ngFor="let car of cars">
+                                <span *ngIf="car.BodyType">
+                                    Hatchback
+                                    <span>
+                                        <a title="All Hatchback Cars" href="#">{{car.BodyType}}</a>
+                                    </span>
+                                </span>
+                                <span *ngIf="!car.BodyType">
+                                    -
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Adjustable Headlights</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Headlights ? car.Headlights : "3"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Fog Lights Front</td>
+                            <td *ngFor="let car of cars">
+                                {{car.FogLights ? car.FogLights : "2"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Tyre Size</td>
+                            <td *ngFor="let car of cars">
+                                {{car.TyreSize ? car.TyreSize : "-"}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- compare details table nine -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-user-lock"></i>
+                                Safety
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">Anti Lock Braking System</td>
+                            <td *ngFor="let car of cars">
+                                {{car.AntiLock ? car.AntiLock : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Brake Assist</td>
+
+                            <td *ngFor="let car of cars">
+                                {{car.Brake ? car.Brake : "-" }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Central Locking</td>
+                            <td *ngFor="let car of cars">
+                                {{car.CentralLocking ? car.CentralLocking : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Power Door Locks</td>
+                            <td *ngFor="let car of cars">
+                                {{car.PowerDoor ? car.PowerDoor : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">No Of Airbags</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Airbags ? car.Airbags : "3"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Hill Assist</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Brake ? car.Brake : "-"}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- compare details table ten -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-music"></i>
+                                Entertainment & Communication
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">
+                                Radio
+                            </td>
+                            <td *ngFor="let car of cars">
+                                {{car.radio ? car.radio : "-" }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">
+                                Speakers Front
+                            </td>
+                            <td *ngFor="let car of cars">
+                                {{car.speakers ? car.speakers : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">
+                                Speakers Rear
+                            </td>
+                            <td *ngFor="let car of cars">
+                                {{car.speakersRare ? car.speakersRare : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Integrated2DINAudio</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Integrated2DINAudio ? car.Integrated2DINAudio : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Bluetooth Connectivity</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Bluetooth ? car.Bluetooth : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Touch Screen</td>
+                            <td *ngFor="let car of cars">
+                                {{car.TouchScreen ? car.TouchScreen : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Touch Screen Size</td>
+                            <td *ngFor="let car of cars">
+                                {{car.Brake ? car.Brake: "6in"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">Number Of Speaker</td>
+                            <td *ngFor="let car of cars">
+                                {{car.NumberOfSpeaker ? car.NumberOfSpeaker : "6"}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- compare details table eleven -->
+            <div class="compare_details_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="engine-name">
+                                <i class="fas fa-sticky-note"></i>
+                                Warranty
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="engine">
+                                Introduction Date
+                            </td>
+                            <td *ngFor="let car of cars">
+                                {{car.EndDate ? car.EndDate : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">
+                                Warranty Time
+                            </td>
+
+                            <td *ngFor="let car of cars">
+                                {{car.Warranty ? car.Warranty : "-"}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="engine">
+                                Warranty Distance
+                            </td>
+                            <td *ngFor="let car of cars">
+                                {{car.WarrantyDistance ? car.WarrantyDistance : "-"}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- compare- details end -->
+
+    <br><br><br>
+</section>

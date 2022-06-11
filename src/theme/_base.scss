@@ -1,0 +1,103 @@
+@import'./variables';
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: block;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-family: $font-en-primary-2;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: $color-black;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+a{
+    display: block;
+    color: $color-black;
+    text-decoration: none;
+}
+a:hover{
+    color: $color-black;
+    text-decoration: none;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.container{
+    display: block;
+    max-width: 1440px;
+    width: 92%;
+    margin: auto;
+}
+@media(max-width:900px){
+    .container{
+        width: 95%;
+    }
+}
+@media(max-width:700px){
+    .container{
+        width: 100%;
+        padding: 0px 15px;
+        box-sizing: border-box;
+    }
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/**** defualt code  ****/
+.title{
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.title h3{
+    font-size: 32px;
+    line-height: 44px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-style: normal;
+    font-family: $open-sans;
+    margin: 0px;
+}
+.title h3 span{
+    color: #F06425;
+    display: inline-block;
+}
+.title a{
+    color: #F06425;
+    font-family: $open-sans;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 500;
+}
+@media(max-width:500px){
+    .title h3{
+        font-size: 28px!important;
+        line-height: 34px;
+    }
+    .title{
+        margin-bottom: 20px;
+    }
+}
+@media(max-width:400px){
+    .title h3{
+        font-size: 23px!important;
+        line-height: 30px;
+    }
+}

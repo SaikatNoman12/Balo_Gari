@@ -1,0 +1,272 @@
+
+
+<section class="section">
+    <!-- banner design start -->
+    <div class="section-one">
+        <div class="section-one-child">
+            <div class="compare-page-banner">
+                <div class="compare-page">
+                    <h2>
+                        Confused? Easy way to compare cars
+                    </h2>
+                </div>
+                <span class="banner-circel"></span>
+            </div>
+        </div>
+    </div>
+    <!-- banner design end -->
+
+    <!-- pagination design start -->
+    <div class="section-one-child">
+        <div class="pagination">
+            <span class="privious_page"><a href="#">Home</a></span>
+            <span class="icon">
+                <i class="fas fa-angle-right"></i>
+            </span>
+            <span class="current_page">Compare cars</span>
+        </div>
+    </div>
+    <!-- pagination design end -->
+
+
+
+    <!-- compare card design start -->
+    <div class="section-one-child">
+        <div class="compare-cards">
+            <div class="card-item">
+
+                <div class="cards">
+
+                    <!-- card one -->
+                    <!-- <div class="card">
+                        <div class="card-imge">
+                            <div class="adding-image d-none">
+                                <div class="plus">
+                                    <i class="las la-plus"></i>
+                                </div>
+                                <h5>add card</h5>
+                            </div>
+                            <div class="image">
+                                <img src="../../../assets/image/car/front-left-side-47.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="select-cars">
+                            <div class="select-car d-none">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Select Brand/Model</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">Maruti Alto 800</mat-option>
+                                        <mat-option value="two">Maruti Alto 800 tour</mat-option>
+                                        <mat-option value="three">Maruti Baleno</mat-option>
+                                        <mat-option value="four">Maruti Ciaz</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+    
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Select Variant</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">STD opt(petrol) 3.69 Lakh*</mat-option>
+                                        <mat-option value="two">LXI opt(petrol) 4.08 Lakh*</mat-option>
+                                        <mat-option value="three">VXI opt(petrol) 4.28 Lakh*</mat-option>
+                                        <mat-option value="four">Ciaz</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+    
+                            <div class="selected-cars">
+                                <h3>
+                                    Maruti Alto 800 
+                                    <span>
+                                        <a href="#">
+                                            <i class="las la-pen"></i>
+                                        </a>
+                                    </span>
+                                </h3>
+    
+                                <div class="selected">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Brand/Model</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Maruti Alto 800</mat-option>
+                                            <mat-option value="two">Maruti Alto 800 tour</mat-option>
+                                            <mat-option value="three">Maruti Baleno</mat-option>
+                                            <mat-option value="four">Maruti Ciaz</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <h2>
+                                    Rs4.08 Lakh*
+                                </h2>
+                                <p>
+                                    *Ex-showroom Price
+                                </p>
+                            </div>
+                        </div>
+    
+                    </div> -->
+
+                    <!-- card-two -->
+                    <div class="card">
+                        <div class="card-imge">
+                            <div class="adding-image" *ngIf="!selectedCar1">
+                                <div class="plus">
+                                    <i class="las la-plus"></i>
+                                </div>
+                                <h5>add card</h5>
+                            </div>
+                            <div class="image" *ngIf="selectedCar1"> 
+                                <img [src]="selectedCar1.image" alt="">
+                                <a class="cross" href="#">x</a>
+                            </div>
+                        </div>
+                        <div class="select-car">
+                            <mat-form-field appearance="outline" class="full">
+                                <mat-label>Select Brand/Model</mat-label>
+                                <mat-select (selectionChange)="onModelChange($event)">
+                                    <mat-optgroup *ngFor="let group of models" [label]="group._id">
+                                        <mat-option *ngFor="let data of group.data" [value]="data">
+                                            {{data.MN}}
+                                        </mat-option>
+                                    </mat-optgroup>
+                                </mat-select>
+                                <mat-error>This field is required.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="full" appearance="outline">
+                                <mat-label>Select Variant</mat-label>
+                                <mat-select (selectionChange)="onVariantChange($event)" #select>
+                                    
+                                    <mat-option *ngFor="let variant of selectedVariant.data" [value]="variant">{{variant}}</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <!-- card-two -->
+                    <div class="card">
+                        <div class="card-imge">
+                            <div class="adding-image" *ngIf="!selectedCar2">
+                                <div class="plus">
+                                    <i class="las la-plus"></i>
+                                </div>
+                                <h5>add card</h5>
+                            </div>
+                            <div class="image" *ngIf="selectedCar2">
+                                <img [src]="selectedCar2.image" alt="">
+                                <a class="cross" href="#">x</a>
+                            </div>
+                        </div>
+                        <div class="select-car">
+                            <mat-form-field appearance="outline" class="full">
+                                <mat-label>Select Brand/Model</mat-label>
+                                <mat-select (selectionChange)="onModelChange1($event)">
+                                    <mat-optgroup *ngFor="let group of models" [label]="group._id">
+                                        <mat-option *ngFor="let data of group.data" [value]="data">
+                                            {{data.MN}}
+                                        </mat-option>
+                                    </mat-optgroup>
+                                </mat-select>
+                                <mat-error>This field is required.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="full" appearance="outline">
+                                <mat-label>Select Variant</mat-label>
+                                <mat-select (selectionChange)="onVariantChange2($event)" #select>
+                                    
+                                    <mat-option *ngFor="let variant of selectedVariant2.data" [value]="variant">{{variant}}</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                            
+                        </div>
+                    </div>
+
+                    <!-- card three -->
+                    <div class="card  card-three">
+                        <div class="card-imge">
+                            <div class="adding-image" *ngIf="!selectedCar3">
+                                <div class="plus">
+                                    <i class="las la-plus"></i>
+                                </div>
+                                <h5>add card</h5>
+                            </div>
+                            <div class="image" *ngIf="selectedCar3">
+                                <img [src]="selectedCar3.image" alt="">
+                            </div>
+                        </div>
+                        <div class="select-car">
+                            <mat-form-field appearance="outline" class="full">
+                                <mat-label>Select Brand/Model</mat-label>
+                                <mat-select (selectionChange)="onModelChange2($event)">
+                                    <mat-optgroup *ngFor="let group of models" [label]="group._id">
+                                        <mat-option *ngFor="let data of group.data" [value]="data">
+                                            {{data.MN}}
+                                        </mat-option>
+                                    </mat-optgroup>
+                                </mat-select>
+                                <mat-error>This field is required.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="full" appearance="outline">
+                                <mat-label>Select Variant</mat-label>
+                                <mat-select (selectionChange)="onVariantChange3($event)" #select>
+                                    
+                                    <mat-option *ngFor="let variant of selectedVariant.data" [value]="variant">{{variant}}</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <!-- card four -->
+                    <div class="card card-three">
+                        <div class="card-imge">
+                            <div class="adding-image" *ngIf="!selectedCar4">
+                                <div class="plus">
+                                    <i class="las la-plus"></i>
+                                </div>
+                                <h5>add card</h5>
+                            </div>
+                            <div class="image" *ngIf="selectedCar4">
+                                <img [src]="selectedCar4.image" alt="">
+                            </div>
+                        </div>
+                        <div class="select-car">
+                            <mat-form-field appearance="outline" class="full">
+                                <mat-label>Select Brand/Model</mat-label>
+                                <mat-select (selectionChange)="onModelChange3($event)">
+                                    <mat-optgroup *ngFor="let group of models" [label]="group._id">
+                                        <mat-option *ngFor="let data of group.data" [value]="data">
+                                            {{data.MN}}
+                                        </mat-option>
+                                    </mat-optgroup>
+                                </mat-select>
+                                <mat-error>This field is required.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="full" appearance="outline">
+                                <mat-label>Select Variant</mat-label>
+                                <mat-select (selectionChange)="onVariantChange4($event)" #select>
+                                    
+                                    <mat-option *ngFor="let variant of selectedVariant4.data" [value]="variant">{{variant}}</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="compare-btn">
+                    <a class="btn" (click)="onCompare()">Compare Now</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- compare card design end -->
+    <br><br><br>
+</section>
